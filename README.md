@@ -1,11 +1,10 @@
 ### Date created
-Include the date you created this project and README file.
+2020-04-30
 
-### Project Title
-Replace the Project Title
+### Explore Bikeshare Data
 
 ### Description
-Describe what your project is about and what it does
+Computing descriptive statistics about a bike-sharing system in Chicago, New York City and Washington.
 
 ### Files used
 Include the files used
