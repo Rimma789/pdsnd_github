@@ -44,7 +44,7 @@ def get_filters():
 
             Returns:
                 (str) day_name - name of the day of week.
-            """   
+            """
             list = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
             number = number - 1
             day_name = list[number]
@@ -160,15 +160,18 @@ def user_stats(df, city):
     user_types = df['User Type'].value_counts()
     print(user_types)
 
-    if city == 'washington':
-        print('There no data for gender and year of birth available.')
-    else:
-        user_gender = df['Gender'].value_counts()
-        print(user_gender)
-        print('Earliest Year of Birth:', int(df['Birth Year'].min()))
-        print('Most Recent Year of Birth:', int(df['Birth Year'].max()))
-        print('Most Common Year of Birth:', int(df['Birth Year'].mode()))
-    # TO DO: Display counts of gender
+
+
+    while True:
+        try:
+            user_gender = df['Gender'].value_counts()
+            print(user_gender)
+            break
+        except KeyError:
+            print('There no data for gender available.')
+            break
+
+
 
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
