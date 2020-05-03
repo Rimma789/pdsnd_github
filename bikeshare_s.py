@@ -171,7 +171,15 @@ def user_stats(df, city):
             print('There no data for gender available.')
             break
 
-
+    while True:
+        try:
+            print('Earliest Year of Birth:', int(df['Birth Year'].min()))
+            print('Most Recent Year of Birth:', int(df['Birth Year'].max()))
+            print('Most Common Year of Birth:', int(df['Birth Year'].mode()))
+            break
+        except KeyError:
+            print('There are no data for year of birth available.')
+            break
 
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
